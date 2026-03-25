@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+        <title>TIP Consulting | Turnaround, Investment & Profit</title>
+        <meta name="description" content="Consultoría en mejora continua, Industria 4.0, turnaround, inversión y optimización de negocios en Argentina. Servicios en Buenos Aires, Santa Fe y Córdoba. Optimización de procesos, digitalización y crecimiento empresarial.">
+        <meta name="keywords" content="mejora continua argentina, industria 4.0 argentina, consultoría empresas buenos aires, consultoría santa fe, consultoría cordoba, optimización procesos, transformación digital empresas, turnaround empresas argentina">
+        <meta name="author" content="TIP Consulting">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "ProfessionalService",
+                "name": "TIP Consulting",
+                "url": "https://www.tipconsulting.com.ar",
+                "areaServed": [
+                    "Buenos Aires",
+                    "Santa Fe",
+                    "Córdoba"
+                ],
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressCountry": "AR"
+                },
+                "description": "Consultoría en mejora continua, Industria 4.0, turnaround e inversión en Argentina" 
+            }
+        </script>
+        <style>
+            /* ==========================
+                 SISTEMA DE DISEÑO
+            =========================*/
+            :root {
+                --navy: #1A237E;
+                --cyan: #00BCD4;
+                --charcoal: #37474F;
+                --light-gray: #f4f7f6;
+                --white: #FFFFFF;
+            }
+
+            body {
+                margin: 0;
+                font-family: 'Montserrat', sans-serif;
+                background: var(--light-gray);
+                color: var(--charcoal);
+            }
+
+            body {
+                position: relative;
+                overflow-x: hidden;
+            }
+
+            /* Fondo global detrás de todo */
+            body::before {
+                content: "";
+                position: fixed; /* SIEMPRE detrás, aunque hagas scroll */
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background-image: url('turnaround-watermark.png'); /* tu logo */
+                background-size: 40%; /* tamaño del logo */
+                background-position: center;
+                background-repeat: no-repeat;
+                opacity: 0.3; /* transparencia elegante */
+                z-index: -1; /* CLAVE: lo manda detrás de todo */
+                pointer-events: none; /* no bloquea clics */
+            }
+
+
+            /* =============================
+                      HEADER DOBLE NIVEL
+            ==============================*/
+            header {
+                position: sticky;
+                top: 0;
+                z-index: 100;
+                width: 100%;
+                background: var(--navy);
+                color: var(--white);
+                box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+            }
+
+            /* Nivel 1 */
+            .top-bar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0.8rem 3rem;
+                background: var(--navy);
+            }
+
+            .logo {
+                font-family: 'Montserrat', sans-serif;
+                font-size: 1.4rem;
+                font-weight: 700;
+                letter-spacing: 1px;
+            }
+
+            .main-nav ul {
+                list-style: none;
+                display: flex;
+                gap: 1.5rem;
+                margin: 0;
+                padding: 0;
+            }
+
+            .main-nav ul li a {
+                color: var(--white);
+                text-decoration: none;
+                font-weight: 500;
+                transition: 0.3s;
+            }
+
+            .main-nav ul li a:hover {
+                color: var(--cyan);
+            }
+
+            /* Nivel 2 */
+            .sub-bar {
+                background: #0F174F; /* un navy más oscuro para diferenciar niveles */
+                padding: 0.6rem 3rem;
+            }
+
+            .sub-nav ul {
+                list-style: none;
+                display: flex;
+                gap: 2rem;
+                margin: 0;
+                padding: 0;
+                justify-content: center;
+            }
+
+            .sub-nav ul li a {
+                color: var(--white);
+                text-decoration: none;
+                font-weight: 600;
+                letter-spacing: 0.5px;
+                transition: 0.3s;
+            }
+
+            .sub-nav ul li a:hover {
+                color: var(--cyan);
+            }
+
+            /*==========================
+                   HERO SECTION
+            ==========================*/
+            .hero {
+                padding: 6rem 3rem;
+                background: linear-gradient(135deg, var(--navy), var(--charcoal));
+                color: var(--white);
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-family: 'Montserrat', sans-serif;
+                font-size: 3rem;
+                margin-bottom: 1rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+                max-width: 700px;
+                margin: auto;
+            }
+
+            /*===========================
+                SECCIONES CORPORATIVAS
+            ===========================*/
+            section {
+                padding: 4rem 3rem;
+            }
+
+            .section-title {
+                font-family: 'Montserrat', sans-serif;
+                font-size: 2rem;
+                margin-bottom: 2rem;
+                color: var(--navy);
+                text-align: center;
+            }
+
+            .section-desc {
+                max-width: 700px;
+                margin: 0 auto 2.5rem auto;
+                font-size: 1.1rem;
+                color: var(--charcoal);
+                line-height: 1.6;
+                text-align: center;
+            }
+
+            .cards {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 2rem;
+            }
+            .card {
+                background: rgba(255, 255, 255, 0.75);
+                backdrop-filter: blur(6px);
+                padding: 2rem;
+                border-radius: 12px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+                transition: 0.3s;
+                position: relative;
+                z-index: 10;
+            }
+
+            .card * {
+                position: relative;
+                z-index: 11;
+            }
+
+            .card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+            }
+
+            .card h3 {
+                font-family: 'Montserrat', sans-serif;
+                color: var(--navy);
+            }
+
+            /*=======================
+                    MATRIX
+            =======================*/
+            .services-matrix {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+                gap: 1.5rem;
+                margin: 2rem 0;
+            }
+
+            .services-matrix__card {
+                background: #ffffff;
+                padding: 1.5rem;
+                border-radius: 12px;
+                border: 1px solid rgba(0,0,0,0.8);
+                box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+                transition: transform .2s ease;
+            }
+
+            .services-matrix__card:hover {
+                transform: translateY(-4px);
+            }
+
+            /*=======================
+                CONTENIDO DETALLADO
+            =======================*/
+            .services-matrix__card.active {
+                background-color: rgba(0, 255, 255, 0.08);
+                border-color: #0f766e;
+                box-shadow: 0 10px 25px rgba(15,118,110,0.3);
+                transition: background-color .3s ease;
+            }
+            
+            .service-detail {
+                margin-top: 2rem;
+                padding: 1.5rem;
+                background: #ffffff;
+                border-radius: 12px;
+                border: 1px solid rgba(0,0,0,0.08);
+                box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+                animation: fadeIn 0.4s ease;
+            }
+
+            @keyframes fadeIn {
+                from {opacity: 0; transform: translateY(10px); }
+                to {opacity: 1; transform: translateY(0); }
+            }
+            /*=======================
+                    CTA
+            =======================*/
+            .cta {
+                text-align: center;
+                padding: 4rem 3rem;
+                background: var(--navy);
+                color: var(--white);
+            }
+
+            .cta button {
+                background:  var(--cyan);
+                border: none;
+                padding: 1rem 2rem;
+                border-radius: 8px;
+                font-size: 1.1rem;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+
+            .cta button:hover {
+                background: #00a5bb
+            }
+
+            /*=======================
+                    FOOTER
+            =======================*/
+            footer {
+                text-align: center;
+                padding: 2rem;
+                background:  var(--charcoal);
+                color: #ECEFF1;
+            }
+
+            /*======================
+                MODAL DE CONTACTO
+            ======================*/
+            .modal {
+                display: none;
+                position: fixed;
+                z-index: 200;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.6);
+                justify-content: center;
+                align-items: center;
+            }
+
+            .modal-content {
+                background: var(--white);
+                padding: 2rem;
+                border-radius: 12px;
+                width: 90%;
+                max-width: 500px;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+                animation: fadeIn 0.3s ease;
+            }
+
+            .modal-content h2 {
+                margin-top: 0;
+                color: var(--navy);
+                font-family: 'Monserrat', sans-serif;
+            }
+
+            .modal-content label {
+                display: block;
+                margin-top: 1rem;
+                font-weight: 600;
+            }
+
+            .modal-content input,
+            .modal-content textarea {
+                width: 100%;
+                padding: 0.8rem;
+                margin-top: 0.3rem;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                font-size: 1rem;
+            }
+
+            .send-btn {
+                margin-top: 1.5rem;
+                width: 100%;
+                background: var(--cyan);
+                border: none;
+                padding: 1rem;
+                border-radius: 8px;
+                font-size: 1.1rem;
+                cursor: pointer;
+                color: var(--white);
+            }
+
+            .send-btn:hover {
+                background: #00a5bb;
+            }
+
+            .close-modal {
+                float: right;
+                font-size: 1.8rem;
+                cursor: pointer;
+                color: var(--charcoal);
+            }
+
+            @keyframes fadeIn {
+                from { opacity: 0; transform: scale(0.95); }
+                to { opacity: 1; transform: scale(1); }
+            }
+        </style>
+    </head>
+    <body>
+
+        <!-- HEADER -->
+         <header>
+            <!-- NIVEL 1 -->
+             <div class="top-bar">
+                <div class="logo">TIP Consulting</div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#services">Servicios</a></li>
+                        <li><a href="#proyectos">Proyectos</a></li>
+                        <li><a href="#" id="open-contact" >Contacto</a></li>
+                    </ul>
+                </nav>
+             </div>
+            <!-- NIVEL2 -->
+             <div class="sub-bar">
+                <nav class="sub-nav">
+                    <ul>
+                        <li><a id="turnaround-text" href="#turnaround">Turnaround</a></li>
+                        <li><a id="investment-text" href="#investment">Investment</a></li>
+                        <li><a id="profit-text" href="#profit">Profit</a></li> 
+                    </ul>
+                </nav>
+             </div>
+         </header>
+        
+        <!-- HERO -->
+         <div class="hero" id="inicio">
+            <h1>Transformamos organizaciones con precisión y estrategia</h1>
+            <p>Turnaround, Investment & Profit: Un enfoque integral para maximizar valor, eficiencia  y crecimiento sostenible.</p>
+         </div>
+        
+        <!-- TURNAROUND -->
+         <section id="turnaround">
+            <h2 class="section-title">Turnaround</h2>
+            <p class="section-desc">Recuperamos la estabilidad operativa y financiera mediante un diagnóstico preciso y acciones de alto impacto.</p>
+            <div class="cards">
+                <div class="card">
+                    <h3>Diagnóstico Integral</h3>
+                    <p>Identificamos cuellos de botella, ineficiencias y riesgos críticos.</p>
+                </div>
+                <div class="card">
+                    <h3>Plan de Recuperación</h3>
+                    <p>Estrategías basadas en datos para estabilizar y reorientar la organización.</p>
+                </div>
+                <div class="card">
+                    <h3>Implementación</h3>
+                    <p>Acompañamiento operativo para asegurar resultados medibles.</p>
+                </div>
+            </div>
+         </section>
+
+        <!-- INVESTMENT -->
+         <section id="investment">
+            <h2 class="section-title">Investment</h2>
+            <p class="section-desc">Evaluamos, optimizamos y potenciamos inversiones para asegurar crecimiento sostenible y retorno real.</p>
+            <div class="cards">
+                <div class="card">
+                    <h3>Análisis Financiero</h3>
+                    <p>Modelos robustos para evaluar viabilidad y retorno.</p>
+                </div>
+            
+                <div class="card">
+                    <h3>Optimización de Capital</h3>
+                    <p>Asignación Estratégica de recursos para maximizar impacto.</p>
+                </div> 
+            
+                <div class="card">
+                    <h3>Due Diligence</h3>
+                    <p>Evaluación profunda para decisiones de inversión seguras.</p>
+                </div>  
+            </div>
+         </section>
+        
+         <!-- PROFIT -->
+         <section id="profit">
+            <h2 class="section-title">Profit</h2>
+            <p class="section-desc">Impulsamos la eficiencia y la rentabilidad mediante procesos inteligentes y digitalización estratégica.</p>
+            <div class="cards">
+                <div class="card">
+                    <h3>Mejora Continua</h3>
+                    <p>Procesos Lean para eficiencia sostenible.</p>
+                </div>
+                <div class="card">
+                    <h3>Digitalización</h3>
+                    <p>Automatización y datos para acelerar resultados.</p>
+                </div>
+                <div class="card">
+                    <h3>KPIs Estratégicos</h3>
+                    <p>Medición precisa para decisiones inteligentes.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES -->
+         <section id="services">
+            <h2 class="section-title">Servicios Especializados</h2>
+            <p class="section-desc">
+                Implementamos soluciones de mejora continua e Industria 4.0 en empresas de Buenos Aires, Santa Fe y Córdoba,
+                optimizando procesos, reduciendo costos y potenciando la transformación digital.<br>
+                Soluciones técnicas, digitales y estratégicas que complementan nuestros pilares de Turnaround, Investment y Profit
+            </p>
+
+            <!-- MATRIX CARD (RESUMEN EJECUTIVO) -->
+             <div class="services-matrix">
+                <div class="services-matrix__card" data-target="procesos">
+                    <h3>Ingeniería de Procesos</h3>
+                    <p>Optimización de flujos, reducción de tiempos y mejora operativa basada en datos.</p>
+                </div>
+                <div class="services-matrix__card" data-target="digital">
+                    <h3>Transformación digital / Industria 4.0</h3>
+                    <p>Digital twins, automatización y analítica avanzada para decisiones inteligentes.</p>
+                </div>
+                <div class="services-matrix__card" data-target="calidad">
+                    <h3>Gestión de Calidad y Certificaciones</h3>
+                    <p>Implementación y mantenimiento de sistemas de gestión alineados a normas internacionales.</p>
+                </div>
+                <div class="services-matrix__card" data-target="finanzas">
+                    <h3>Consultoría Financiera y Estratégica</h3>
+                    <p>Modelos financieros, escenarios y estrategías para maximizar rentabilidad sostenible</p>
+                </div>                
+             </div>
+
+            <!-- CONTENIDO DETALLADO ( OCULTO PERO INDEXABLE ) -->
+             <div class="services-detail__data">
+
+                <div class="services-detail__item" data-id="procesos" hidden>
+                    <h3>Ingeniería de Procesos</h3>
+                    <p>Rediseño de procesos, eliminación de desperdicios y mejora continua.</p>
+                    <ul>
+                        <li>Mapeo de procesos</li>
+                        <li>Balanceo de líneas</li>
+                        <li>Optimización de tiempos de ciclo</li>
+                    </ul>
+                </div>
+
+                <div class="services-detail__item" data-id="digital" hidden>
+                    <h3>Transformación Digital / Industria 4.0</h3>
+                    <p>Integración de tecnología para acelerar resultados y habilitar decisiones basadas en datos</p>
+                    <ul>
+                        <li>Roadmap Digital</li>
+                        <li>Digital twins</li>
+                        <li>Automatización y analítica</li>
+                    </ul>
+                </div>
+
+                <div class="services-detail__item" data-id="calidad" hidden>
+                    <h3>Gestión de Calidad y Certificaciones</h3>
+                    <p>Preparación para auditorías, certificaciones y mejora continua.</p>
+                    <ul>
+                        <li>Sistemas de Gestión ISO</li>
+                        <li>Auditorias Internas</li>
+                        <li>Gestión de riesgos y no conformidades</li>
+                    </ul>
+                </div>
+
+                <div class="services-detail__item" data-id="finanzas" hidden>
+                    <h3>Consultoría Financiera y Estratégica</h3>
+                    <p>Visión financiera integrada  con estrategia y operaciones.</p>
+                    <ul>
+                        <li>Modelos financieros (Turnaround Financiero)</li>
+                        <li>Planes de inversión</li>
+                        <li>EBITDA y valor empresarial</li>
+                        <li>Soporte a directorios</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CONTENEDOR DONDE SE MOSTRARÁ EL CONTENIDO -->
+             <div class="service-detail" id="service-detail"></div>
+
+         </section>
+
+        <!-- CTA -->
+        <div class="cta">
+            <h2>¿Listo para transformar tu organización?</h2>
+        <button id="open-contact-cta" >Contactar</button>
+        </div>
+
+        <!-- FORMULARIO DE CONTACTO (MODAL) -->
+         <div id="contact-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+
+                <h2>Contacto</h2>
+
+                <form id="contact-form">
+                    <label>Nombre</label>
+                    <input type="text" name="nombre" required>
+
+                    <label>Email</label>
+                    <input type="email" name="email" required>
+
+                    <label>Mensaje</label>
+                    <textarea name="mensaje" rows="5" required></textarea>
+
+                    <button type="submit" class="send-btn">Enviar</button>
+
+                    <p class="contact-email">O escríbenos directamente a:
+                        <a href="mailto:info@tipconsulting.com.ar">info@tipconsulting.com.ar</a>
+                    </p>
+
+                    <!-- Mensaje de estado -->
+                     <p id="form-status" style="display:none;"></p>
+                </form>
+            </div>
+         </div>
+
+        <!-- FOOTER -->
+        
+        <footer>
+            © 2025 TIP Consulting -- Turnaround, Investment & Profit
+        </footer>
+
+       
+        <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            // ===== TEXTO DINAMICO IDIOMA =====
+            const items = [
+                    
+                {
+                    id: "turnaround-text",
+                    en: "Turnaround",
+                    es: "Cambio de dirección"
+                },
+                {
+                    id: "investment-text",
+                    en: "Investment",
+                    es: "Inversiones"
+                },
+                {
+                    id: "profit-text",
+                    en: "Profit",
+                    es: "Ganancias"
+                }
+            ];
+            let showEnglish = true;
+
+            setInterval(() => {
+                items.forEach(item => {
+                    const element = document.getElementById(item.id);
+                    if (element) {
+                        element.textContent = showEnglish ? item.es : item.en;
+                    }  
+                });
+                showEnglish = !showEnglish;
+            },4000); //Cambia cada 4 segundos 
+
+            // ===== CARDS DE SERVICIOS =====
+
+            const cards= document.querySelectorAll(".services-matrix__card");
+            const detail = document.getElementById("service-detail");
+
+            cards.forEach(card => {
+                card.addEventListener("click", () => {
+                    const target = card.getAttribute("data-target");
+
+                    //Resaltar card activa
+                    cards.forEach(c => c.classList.remove("active"));
+                    card.classList.add("active");
+
+                    //Buscar contenido en HTML oculto
+                    const content = document.querySelector(`.services-detail__item[data-id="${target}"]`);
+
+
+                    if (content && detail) {
+                        detail.innerHTML = content.innerHTML;
+
+                        //Scroll suave
+                        detail.scrollIntoView({behavior: "smooth", block:"start"});
+                    }  
+                });
+            });
+
+            // ===== MODAL =====
+            const modal = document.getElementById("contact-modal");
+            const openMenu = document.getElementById("open-contact");
+            const openCTA = document.getElementById("open-contact-cta");
+            const closeBtn = document.querySelector(".close-modal");
+        
+            if (openMenu) openMenu.onclick = () =>  modal.style.display = "flex";
+            if (openCTA) openCTA.onclick = () => modal.style.display = "flex";
+            if (closeBtn) closeBtn.onclick = () => modal.style.display = "none";
+
+            window.onclick = (e) => {
+                if (modal && e.target === modal) {
+                    modal.style.display = "none";
+                }   
+            };
+
+            // ===== FORMULARIO =====
+            const form = document.getElementById("contact-form");
+
+            if(form) {
+                const status = document.getElementById("form-status");
+                const btn = form.querySelector(".send-btn");         
+
+                form.addEventListener("submit", function(e){
+                    e.preventDefault();
+
+                    // Anti doble click
+                    if(btn.disabled) return;
+            
+                    const data = new FormData(form);
+
+                    btn.disabled = true;
+                    btn.textContent = "Enviando...";
+                    status.style.display = "none";
+
+                    fetch("https://script.google.com/macros/s/AKfycbyOAdoPvfplsJUal97dnY2HGG9cJ1Zre2woadiDqPwQdu3ixqjv99SFiK-mv5cxPMKu/exec", {
+                        method: "POST",
+                        body: data
+                    })
+                    .then(res => {
+                        if(!res.ok) throw new Error("Error HTTP");
+                        return res.json();
+                    })
+                    .then(data => {
+
+                        status.style.display = "block";
+
+                        if(data.status ==="ok") {
+                            status.style.color = "green";
+                            status.textContent = data.message || "Mensaje enviado correctamente ✅";
+
+                            form.reset();
+                            if(modal) modal.style.display = "none"; // cierra modal
+                        } else {
+                            status.style.color = "red";
+                            status.textContent = data.message || "Error en el envío ❌";
+                        }
+                    })
+                    .catch(() => {
+                        status.style.display = "block";
+                        status.style.color = "red";
+                        status.textContent = "Error en la conexión ❌";
+                    })
+                        
+                    .finally(() => {
+                        btn.disabled = false;
+                        btn.textContent = "Enviar";
+                    });
+                })
+            }
+        });
+        </script>
+    </body>
+</html> 

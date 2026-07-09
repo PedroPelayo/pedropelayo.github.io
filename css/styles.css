@@ -1,0 +1,599 @@
+/* ==========================
+   RESET + BASE
+========================= */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: #f4f7f6;
+    color: #37474F;
+    overflow-x: hidden;
+}
+
+/* ==========================
+   VARIABLES
+========================= */
+:root {
+    --navy: #1A237E;
+    --cyan: #00BCD4;
+    --charcoal: #37474F;
+    --white: #FFFFFF;
+}
+
+/* ==========================
+   BACKGROUND
+========================= */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url('../img/turnaround-watermark.png') center / 40% no-repeat;
+    opacity: 0.25;
+    z-index: -1;
+    pointer-events: none; /* No bloquea clics */
+}
+
+/* ==========================
+   HEADER
+========================= */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    background: var(--navy);
+    color: white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* TOP BAR */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 3rem;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+/* NAV */
+.main-nav {
+    display: flex;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.main-nav a:hover {
+    color: var(--cyan);
+}
+
+/* ==========================
+   🌐 TRANSICIÓN IDIOMA (FIX)
+========================= */
+
+.menu-item {
+    display: grid;
+    place-items: center;
+}
+
+/* ambos textos ocupan el mismo espacio */
+.menu-item .text {
+    grid-area: 1 / 1;
+    white-space: nowrap;
+    transition: opacity 0.4s ease;
+}
+
+/* visible */
+.menu-item .active {
+    opacity: 1;
+}
+
+/* oculto */
+.menu-item .text:not(.active) {
+    opacity: 0;
+}
+/* ==========================
+   BOTÓN MOBILE
+========================= */
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* ocultar secundarios en desktop */
+.secondary-item {
+    display: none;
+}
+
+/* ==========================
+   SUB NAV (DESKTOP)
+========================= */
+.sub-bar {
+    background: #0F174F;
+    padding: 0.6rem 3rem;
+}
+
+.sub-nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sub-nav a {
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    position: relative;
+}
+
+.sub-nav a:hover {
+    color: var(--cyan);
+}
+
+/* ==========================
+   HERO
+========================= */
+.hero {
+    padding: 6rem 3rem;
+    background: linear-gradient(135deg, var(--navy), var(--charcoal));
+    color: white;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: auto;
+}
+
+/* ==========================
+   SECCIONES
+========================= */
+section {
+    padding: 4rem 3rem;
+}
+
+.section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--navy);
+}
+
+.section-desc {
+    max-width: 700px;
+    margin: 0 auto 3rem auto; /*3rem debajo */
+    text-align: center;
+}
+
+section {
+    scroll-margin-top: 60px;  /* ajustá según la altura del header */
+}
+
+/* ==========================
+   CARDS
+========================= */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(6px);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+    transition: 0.3s;
+    position: relative;
+    z-index: 10;
+}
+
+.card *{
+    position: relative;
+    z-index:11;
+}
+
+.card h3{
+    font-family: 'Montserrat', sans-serif;
+    color: var(--navy);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow:0 6px 18px rgba(0,0,0,.12);
+}
+
+/* ==========================
+   SERVICES
+========================= */
+.services-matrix {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.services-matrix__card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, .8);
+    box-shadow:0 8px 20px rgba(0, 0, 0, .6);
+    transition:transform .2s ease;
+    cursor: pointer;
+}
+
+.services-matrix__card:hover{
+    transform:translateY(-4px);
+}
+
+.services-matrix__card h3 {
+    color: var(--navy);
+}
+
+.services-matrix__card.active {
+    background: rgba(0,255,255,0.08);
+    border-color:#0f766e;
+    box-shadow:0 10px 25px rgba(15, 118, 110, .3);
+    transition:background-color .3s ease;
+}
+
+.service-detail {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 12px;
+    border:1px solid rgba(0, 0, 0,.08);
+    box-shadow:0 10px 25px rgba(0, 0, 0, .06);
+    scroll-margin-top: 160px;
+    animation:fadeUp .4s ease;
+}
+
+.service-detail h3 {
+    color: var(--navy) !important;
+}
+
+@keyframes fadeUp{
+    from{opacity: 0; transform: translateY(10px)};
+    to{opacity:1; transform: translateY(0)};
+}
+
+/* ==========================
+   COBERTURA NACIONAL
+========================= */
+#coverage{
+    padding: 80px 8%;
+    background: rgba(255, 255, 255, .08);
+    text-align: center;
+}
+
+.coverage-grid{
+    margin-top: 45px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+    gap: 30px;
+}
+
+.coverage-card{
+    background: #fff;
+    border-radius: 14px;
+    padding: 30px;
+    border-top:5px var(--navy);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .08);
+    transition: all .3s ease;
+}
+
+.coverage-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, .15);
+}
+
+.coverage-card h3{
+    color: #0b5fa5;  /* mismo azul de TIP */
+    margin-bottom: 18px;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.coverage-card i{
+    color: var(--navy);
+    margin-right: 8px;
+}
+
+.coverage-card ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.coverage-card li{
+    padding: 10px 0;
+    color: #555;
+    font-size: .98rem;
+    border-bottom: 1px solid #ececec;
+}
+
+.coverage-card li:last-child{
+    border-bottom: none;
+}
+
+.coverage-note{
+    max-width: 900px;
+    margin: 50px auto 0;
+    font-size: 1.05rem;
+    color: #555;
+    line-height: 1.7;
+}
+
+/* ==========================
+   CTA
+========================= */
+.cta {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: var(--navy);
+    color: white;
+}
+
+.cta button {
+    background: var(--cyan);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cta button:hover {
+    background:#00a5bb;
+}
+
+/* ==========================
+   FOOTER
+========================= */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: var(--charcoal);
+    color: #ECEFF1;
+}
+
+/* ==========================
+   MODAL
+========================= */
+.modal {
+    display: none;
+    position: fixed;
+    z-index:200;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow:0 4px 20px rgba(0, 0, 0, .02);
+    animation:fadeUp .3s ease;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    color: var(--navy);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.modal-content label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+.modal-content input,
+.modal-content textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 0.3rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.send-btn {
+    margin-top: 1.5rem;
+    width: 100%;
+    background: var(--cyan);
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: var(--white);
+}
+
+.send-btn:hover {
+    background: #00a5bb;
+}
+
+.close-modal {
+    float: right;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--charcoal);
+}
+
+.contact-email,
+.contact-phone,
+.contact-whatsapp{
+    margin-top:1rem;
+    padding:1rem 1.2rem;
+    background:linear-gradient(135deg,#ffffff,#f7f9fc);
+    border:1px solid rgba(26, 35, 126, .08);
+    border-left:5px solid var(--cyan);
+    border-radius:10px;
+    box-shadow:0 4px 12px rgba(0, 0, 0, .06);
+    transition:.25s ease;
+}
+
+
+@keyframes fadeScale {
+    from { opacity: 0; transform: scale(0.95);}
+    to { opacity: 1; transform: scale(1);}
+}
+
+
+/* ==========================
+   WHATSAPP FLOTANTE
+========================= */
+.whatsapp-float{
+    position:fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #25D366;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+    font-size: 2rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .25);
+    z-index: 999;
+    transition: .25s ease;
+    animation:whatsappPulse 2.5s infinite;
+}
+.whatsapp-float:hover {
+    transform: scale(1.12);
+    background: #1ebe5d;
+}
+
+@keyframes fadeScale {
+    from { opacity: 0; transform: scale(0.95);}
+    to { opacity: 1; transform: scale(1);}
+}
+
+@keyframes whatsappPulse {
+    0%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.08);
+    }
+    100%{
+        transform:scale(1);
+    }
+}
+
+/* ==========================
+   📱 MOBILE
+========================= */
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .top-bar {
+        padding: 1rem;
+    }
+
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 60px;
+        width: 100%;
+        background: var(--navy);
+        padding-bottom: 1rem;
+    }
+
+    .main-nav.active {
+        display: block;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 1.5rem;
+    }
+
+    .sub-bar {
+        display: none;
+    }
+
+    .secondary-item {
+        display: block;
+    }
+
+    .hero {
+        padding: 3rem 1rem;
+    }
+
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+
+    section {
+        padding: 2rem 1rem;
+        padding-top: 1.2rem; /* espacio extra para que los  títulos no queden debajo del header */
+    }
+
+    /* Ajuste global de scroll para títulos */
+    html {
+        scroll-padding-top: 20px; /* altura del header */
+    }
+
+    h1, h2, h3 {
+        scroll-margin-top: 20px; /* margen de scroll para que no se oculten */
+    }
+
+    .whatsapp-float{
+        width: 55px;
+        height: 55px;
+        right: 18px;
+        bottom: 18px;
+        font-size: 1.8rem;
+    }
+}

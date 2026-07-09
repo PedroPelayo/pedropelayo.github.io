@@ -2,415 +2,123 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
-        <title>TIP Consulting | Turnaround, Investment & Profit</title>
-        <meta name="description" content="Consultoría en mejora continua, Industria 4.0, turnaround, inversión y optimización de negocios en Argentina. Servicios en Buenos Aires, Santa Fe y Córdoba. Optimización de procesos, digitalización y crecimiento empresarial.">
-        <meta name="keywords" content="mejora continua argentina, industria 4.0 argentina, consultoría empresas buenos aires, consultoría santa fe, consultoría cordoba, optimización procesos, transformación digital empresas, turnaround empresas argentina">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Consultoría Industrial | Mejora de procesos, Lean Manufacturing e Industria 4.0 en Argentina | TIP Consulting</title>
+
+        <meta name="description" content="Consultoría industrial para empresas. Especialistas en mejora de procesos, Lean Manufacturing, Industria 4.0, Inteligencia Artificial y Digital Twin. Ayudamos a reducir costos y aumentar la rentabilidad en Argentina.">
+
+        <!-- SEO extra -->
+        <meta name="robots" content="index, follow">
         <meta name="author" content="TIP Consulting">
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+        <!-- Open Graph (para compartir en LinkedIn/WhatsApp) -->
+        <meta property="og:title" content="TIP Consulting | Mejora de procesos e Industria 4.0">
+        <meta property="og:description" content="Optimización de procesos, turnaround y transformación digital en Argentina.">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://www.tipconsulting.com.ar">
+
+        <!-- Fuente -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/styles.css">
+
+        <!-- JS -->
+        <script src="js/script.js" defer></script>
+
+        <!-- Schema SEO -->
         <script type="application/ld+json">
-            {
-                "@context": "https://schema.org",
-                "@type": "ProfessionalService",
-                "name": "TIP Consulting",
-                "url": "https://www.tipconsulting.com.ar",
-                "areaServed": [
-                    "Buenos Aires",
-                    "Santa Fe",
-                    "Córdoba"
-                ],
-                "address": {
-                    "@type": "PostalAddress",
-                    "addressCountry": "AR"
-                },
-                "description": "Consultoría en mejora continua, Industria 4.0, turnaround e inversión en Argentina" 
-            }
+        {
+        "@context": "https://schema.org",
+        "@type": "ConsultingService",
+        "name": "TIP Consulting",
+        "url": "https://www.tipconsulting.com.ar",
+        "description": "Consultoría en mejora de procesos, Industria 4.0 y turnaround en Argentina",
+        "areaServed": ["Rosario", "Buenos Aires", "Santa Fe"],
+        "telephone": "+5493329201439",
+        "email": "info@tipconsulting.com.ar"
+        }
         </script>
-        <style>
-            /* ==========================
-                 SISTEMA DE DISEÑO
-            =========================*/
-            :root {
-                --navy: #1A237E;
-                --cyan: #00BCD4;
-                --charcoal: #37474F;
-                --light-gray: #f4f7f6;
-                --white: #FFFFFF;
-            }
-
-            body {
-                margin: 0;
-                font-family: 'Montserrat', sans-serif;
-                background: var(--light-gray);
-                color: var(--charcoal);
-            }
-
-            body {
-                position: relative;
-                overflow-x: hidden;
-            }
-
-            /* Fondo global detrás de todo */
-            body::before {
-                content: "";
-                position: fixed; /* SIEMPRE detrás, aunque hagas scroll */
-                top: 0;
-                left: 0;
-                width: 100vw;
-                height: 100vh;
-                background-image: url('turnaround-watermark.png'); /* tu logo */
-                background-size: 40%; /* tamaño del logo */
-                background-position: center;
-                background-repeat: no-repeat;
-                opacity: 0.3; /* transparencia elegante */
-                z-index: -1; /* CLAVE: lo manda detrás de todo */
-                pointer-events: none; /* no bloquea clics */
-            }
-
-
-            /* =============================
-                      HEADER DOBLE NIVEL
-            ==============================*/
-            header {
-                position: sticky;
-                top: 0;
-                z-index: 100;
-                width: 100%;
-                background: var(--navy);
-                color: var(--white);
-                box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-            }
-
-            /* Nivel 1 */
-            .top-bar {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 0.8rem 3rem;
-                background: var(--navy);
-            }
-
-            .logo {
-                font-family: 'Montserrat', sans-serif;
-                font-size: 1.4rem;
-                font-weight: 700;
-                letter-spacing: 1px;
-            }
-
-            .main-nav ul {
-                list-style: none;
-                display: flex;
-                gap: 1.5rem;
-                margin: 0;
-                padding: 0;
-            }
-
-            .main-nav ul li a {
-                color: var(--white);
-                text-decoration: none;
-                font-weight: 500;
-                transition: 0.3s;
-            }
-
-            .main-nav ul li a:hover {
-                color: var(--cyan);
-            }
-
-            /* Nivel 2 */
-            .sub-bar {
-                background: #0F174F; /* un navy más oscuro para diferenciar niveles */
-                padding: 0.6rem 3rem;
-            }
-
-            .sub-nav ul {
-                list-style: none;
-                display: flex;
-                gap: 2rem;
-                margin: 0;
-                padding: 0;
-                justify-content: center;
-            }
-
-            .sub-nav ul li a {
-                color: var(--white);
-                text-decoration: none;
-                font-weight: 600;
-                letter-spacing: 0.5px;
-                transition: 0.3s;
-            }
-
-            .sub-nav ul li a:hover {
-                color: var(--cyan);
-            }
-
-            /*==========================
-                   HERO SECTION
-            ==========================*/
-            .hero {
-                padding: 6rem 3rem;
-                background: linear-gradient(135deg, var(--navy), var(--charcoal));
-                color: var(--white);
-                text-align: center;
-            }
-
-            .hero h1 {
-                font-family: 'Montserrat', sans-serif;
-                font-size: 3rem;
-                margin-bottom: 1rem;
-            }
-
-            .hero p {
-                font-size: 1.2rem;
-                max-width: 700px;
-                margin: auto;
-            }
-
-            /*===========================
-                SECCIONES CORPORATIVAS
-            ===========================*/
-            section {
-                padding: 4rem 3rem;
-            }
-
-            .section-title {
-                font-family: 'Montserrat', sans-serif;
-                font-size: 2rem;
-                margin-bottom: 2rem;
-                color: var(--navy);
-                text-align: center;
-            }
-
-            .section-desc {
-                max-width: 700px;
-                margin: 0 auto 2.5rem auto;
-                font-size: 1.1rem;
-                color: var(--charcoal);
-                line-height: 1.6;
-                text-align: center;
-            }
-
-            .cards {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-                gap: 2rem;
-            }
-            .card {
-                background: rgba(255, 255, 255, 0.75);
-                backdrop-filter: blur(6px);
-                padding: 2rem;
-                border-radius: 12px;
-                box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-                transition: 0.3s;
-                position: relative;
-                z-index: 10;
-            }
-
-            .card * {
-                position: relative;
-                z-index: 11;
-            }
-
-            .card:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-            }
-
-            .card h3 {
-                font-family: 'Montserrat', sans-serif;
-                color: var(--navy);
-            }
-
-            /*=======================
-                    MATRIX
-            =======================*/
-            .services-matrix {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-                gap: 1.5rem;
-                margin: 2rem 0;
-            }
-
-            .services-matrix__card {
-                background: #ffffff;
-                padding: 1.5rem;
-                border-radius: 12px;
-                border: 1px solid rgba(0,0,0,0.8);
-                box-shadow: 0 8px 20px rgba(0,0,0,0.6);
-                transition: transform .2s ease;
-            }
-
-            .services-matrix__card:hover {
-                transform: translateY(-4px);
-            }
-
-            /*=======================
-                CONTENIDO DETALLADO
-            =======================*/
-            .services-matrix__card.active {
-                background-color: rgba(0, 255, 255, 0.08);
-                border-color: #0f766e;
-                box-shadow: 0 10px 25px rgba(15,118,110,0.3);
-                transition: background-color .3s ease;
-            }
-            
-            .service-detail {
-                margin-top: 2rem;
-                padding: 1.5rem;
-                background: #ffffff;
-                border-radius: 12px;
-                border: 1px solid rgba(0,0,0,0.08);
-                box-shadow: 0 10px 25px rgba(0,0,0,0.06);
-                animation: fadeIn 0.4s ease;
-            }
-
-            @keyframes fadeIn {
-                from {opacity: 0; transform: translateY(10px); }
-                to {opacity: 1; transform: translateY(0); }
-            }
-            /*=======================
-                    CTA
-            =======================*/
-            .cta {
-                text-align: center;
-                padding: 4rem 3rem;
-                background: var(--navy);
-                color: var(--white);
-            }
-
-            .cta button {
-                background:  var(--cyan);
-                border: none;
-                padding: 1rem 2rem;
-                border-radius: 8px;
-                font-size: 1.1rem;
-                cursor: pointer;
-                transition: 0.3s;
-            }
-
-            .cta button:hover {
-                background: #00a5bb
-            }
-
-            /*=======================
-                    FOOTER
-            =======================*/
-            footer {
-                text-align: center;
-                padding: 2rem;
-                background:  var(--charcoal);
-                color: #ECEFF1;
-            }
-
-            /*======================
-                MODAL DE CONTACTO
-            ======================*/
-            .modal {
-                display: none;
-                position: fixed;
-                z-index: 200;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0,0,0,0.6);
-                justify-content: center;
-                align-items: center;
-            }
-
-            .modal-content {
-                background: var(--white);
-                padding: 2rem;
-                border-radius: 12px;
-                width: 90%;
-                max-width: 500px;
-                box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-                animation: fadeIn 0.3s ease;
-            }
-
-            .modal-content h2 {
-                margin-top: 0;
-                color: var(--navy);
-                font-family: 'Monserrat', sans-serif;
-            }
-
-            .modal-content label {
-                display: block;
-                margin-top: 1rem;
-                font-weight: 600;
-            }
-
-            .modal-content input,
-            .modal-content textarea {
-                width: 100%;
-                padding: 0.8rem;
-                margin-top: 0.3rem;
-                border: 1px solid #ccc;
-                border-radius: 8px;
-                font-size: 1rem;
-            }
-
-            .send-btn {
-                margin-top: 1.5rem;
-                width: 100%;
-                background: var(--cyan);
-                border: none;
-                padding: 1rem;
-                border-radius: 8px;
-                font-size: 1.1rem;
-                cursor: pointer;
-                color: var(--white);
-            }
-
-            .send-btn:hover {
-                background: #00a5bb;
-            }
-
-            .close-modal {
-                float: right;
-                font-size: 1.8rem;
-                cursor: pointer;
-                color: var(--charcoal);
-            }
-
-            @keyframes fadeIn {
-                from { opacity: 0; transform: scale(0.95); }
-                to { opacity: 1; transform: scale(1); }
-            }
-        </style>
     </head>
     <body>
-
         <!-- HEADER -->
-         <header>
-            <!-- NIVEL 1 -->
-             <div class="top-bar">
+        <header>
+            <div class="top-bar">
                 <div class="logo">TIP Consulting</div>
-                <nav class="main-nav">
+
+                <!-- BOTÓN MOBILE -->
+                <button class="menu-toggle" id="menu-toggle">☰</button>
+
+                <nav class="main-nav" id="main-nav">
                     <ul>
                         <li><a href="#inicio">Inicio</a></li>
+                        
+                        <!-- SOLO MOBILE -->
+                        <li class ="secondary-item">
+                            <a href="#turnaround" class="menu-item">
+                                <span class="text en active">Turnaround</span>
+                                <span class="text es">Cambio de dirección</span>
+                            </a>
+                        </li>
+                        <li class ="secondary-item">
+                            <a href="#investment" class="menu-item">
+                                <span class="text en active">Investment</span>
+                                <span class="text es">Inversiones</span>  
+                            </a>
+                        </li>
+                        <li class ="secondary-item">
+                            <a href="#profit" class="menu-item">
+                                <span class="text en active">Profit</span>
+                                <span class="text es">Ganancias</span>   
+                            </a>
+                        </li>
+
                         <li><a href="#services">Servicios</a></li>
-                        <li><a href="#proyectos">Proyectos</a></li>
-                        <li><a href="#" id="open-contact" >Contacto</a></li>
+                        <li><a href="#" id="open-contact">Contacto</a></li>
+                        <li class ="instagram-item">
+                            <a href="https://www.instagram.com/consultora_tip" target="_blank" aria-label="Instagram">
+                                <i class="fa-brands fa-instagram"></i>
+                                <span class="instagram-text">Instagram</span>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
-             </div>
-            <!-- NIVEL2 -->
-             <div class="sub-bar">
+            </div>
+
+            <div class="sub-bar">
                 <nav class="sub-nav">
                     <ul>
-                        <li><a id="turnaround-text" href="#turnaround">Turnaround</a></li>
-                        <li><a id="investment-text" href="#investment">Investment</a></li>
-                        <li><a id="profit-text" href="#profit">Profit</a></li> 
+                        <li>
+                            <a href="#turnaround" class="menu-item">
+                                <span class="text en active">Turnaround</span>
+                                <span class="text es">Cambio de dirección</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#investment" class="menu-item">
+                                <span class="text en active">Investment</span>
+                                <span class="text es">Inversiones</span>    
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#profit" class="menu-item">
+                                <span class="text en active">Profit</span>
+                                <span class="text es">Ganancias</span>    
+                            </a>
+                        </li>
                     </ul>
                 </nav>
-             </div>
-         </header>
+            </div>       
+        </header>
         
         <!-- HERO -->
          <div class="hero" id="inicio">
-            <h1>Transformamos organizaciones con precisión y estrategia</h1>
-            <p>Turnaround, Investment & Profit: Un enfoque integral para maximizar valor, eficiencia  y crecimiento sostenible.</p>
+            <h1>Consultoría Industrial para mejorar procesos, reducir costos y aumentar rentabilidad</h1>
+            <p>En TIP Consulting ayudamos a empresas industriales de Argentina a incrementar su competitividad mediante estrategias de <strong>Turnaround, Investment & Profit</strong>. Somos especialistas en <strong>Ingeniería de Procesos</strong>, <strong>Lean Manufacturing</strong>, <strong>Industria 4.0</strong>, <strong>Inteligencia Artificial</strong>, <strong>Digital Twin</strong> y <strong>Transformación Digital</strong>, desarrollando soluciones para reducir costos, aumentar la productividad y generar un crecimiento sostenible en empresas de Buenos Aires, Santa Fe, Córdoba y todo el país.</p>
          </div>
         
         <!-- TURNAROUND -->
@@ -554,6 +262,76 @@
 
          </section>
 
+        <section id="coverage">
+            <h2 class="section-title">
+                Cobertura Nacional y Principales Polos Industriales
+            </h2>
+
+            <p class="section-desc">
+                Desarrollamos proyectos de Ingeniería de Procesos,
+                Lean Manufacturing, Industria 4.0,
+                Inteligencia Artificial y Transformación Digital 
+                para empresas ubicadas en los principales polos
+                industriales del país.
+            </p>
+
+            <div class="coverage-grid">
+                <div class="coverage-card">
+                    <h3>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Buenos Aires
+                    </h3>
+                    <ul>
+                        <li>Baradero</li>
+                        <li>San Nicolás</li>
+                        <li>Campana</li>
+                        <li>Zárate</li>
+                        <li>Pergamino</li>
+                        <li>Junín</li>
+                        <li>San Nicolas</li>
+                        <li>Gran Buenos Aires</li>
+                    </ul>
+                </div>
+
+                <div class="coverage-card">
+                    <h3>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Santa Fe
+                    </h3>
+                    <ul>
+                        <li>Rosario</li>
+                        <li>Santa Fe</li>
+                        <li>Rafaela</li>
+                        <li>Esperanza</li>
+                        <li>Armstrong</li>
+                        <li>Firmat</li>
+                        <li>Villa Constitución</li>
+                        <li>Reconquista</li>
+                        <li>San Justo</li>
+                        <li>Sunchales</li>
+                    </ul>
+                </div>
+
+                <div class="coverage-card">
+                    <h3>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Córdoba
+                    </h3>
+                    <ul>
+                        <li>Córdoba Capital</li>
+                        <li>Río Cuarto</li>
+                        <li>Villa María</li>
+                        <li>San Francisco</li>
+                        <li>Morteros</li>
+                        <li>Marcos Juarez</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="coverage-note">
+                También desarrollamos proyectos en cualquier provincia de Argentina, de forma presencial o remota, adaptándonos a las necesidades de cada organización.
+            </p>
+        </section>
+
         <!-- CTA -->
         <div class="cta">
             <h2>¿Listo para transformar tu organización?</h2>
@@ -582,14 +360,10 @@
                     <p class="contact-email">O escríbenos directamente a:
                         <a href="mailto:info@tipconsulting.com.ar">info@tipconsulting.com.ar</a>
                     </p>
-
-                    <p class="contact-phone">
-                        📞 +54 9 3329201439 / +54 9 3483585746
-                    </p>
-
-                    <p class=" contact-whatsapp">
-                        <a href="https://wa.me/5493329201439" target="_blank"> 💬 WhatsApp: +5493329201439 </a><br>
-                        <a href="https://wa.me/5493483585746" target="_blank"> 💬 WhatsApp: +5493483585746 </a>
+                    <p class="contact-phone"> 📞 +54 9 3329201439 / +54 9 3483585746 </p>
+                    <p class="contact-whatsapp">
+                        <a href="https://wa.me/543329201439" target="_blank">💬 Whatsapp: +54 9 3329 201439</a><br>
+                        <a href="https://wa.me/5493483585746" target="_blank">💬 Whatsapp: +54 9 3483 585746</a>
                     </p>
 
                     <!-- Mensaje de estado -->
@@ -598,144 +372,20 @@
             </div>
          </div>
 
+        <!-- BOTÓN FLOTANTE WHATSAPP -->
+        <a href="https://wa.me/5493329201439?text=Hola,%20quisiera%20más%20información%20sobre%20TIP%20Consulting."
+            class="whatsapp-float"
+            target="_blank"
+            aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+
+
         <!-- FOOTER -->
         
         <footer>
             © 2025 TIP Consulting -- Turnaround, Investment & Profit
         </footer>
 
-       
-        <script>
-        document.addEventListener("DOMContentLoaded", () => {
-
-            // ===== TEXTO DINAMICO IDIOMA =====
-            const items = [
-                    
-                {
-                    id: "turnaround-text",
-                    en: "Turnaround",
-                    es: "Cambio de dirección"
-                },
-                {
-                    id: "investment-text",
-                    en: "Investment",
-                    es: "Inversiones"
-                },
-                {
-                    id: "profit-text",
-                    en: "Profit",
-                    es: "Ganancias"
-                }
-            ];
-            let showEnglish = true;
-
-            setInterval(() => {
-                items.forEach(item => {
-                    const element = document.getElementById(item.id);
-                    if (element) {
-                        element.textContent = showEnglish ? item.es : item.en;
-                    }  
-                });
-                showEnglish = !showEnglish;
-            },4000); //Cambia cada 4 segundos 
-
-            // ===== CARDS DE SERVICIOS =====
-
-            const cards= document.querySelectorAll(".services-matrix__card");
-            const detail = document.getElementById("service-detail");
-
-            cards.forEach(card => {
-                card.addEventListener("click", () => {
-                    const target = card.getAttribute("data-target");
-
-                    //Resaltar card activa
-                    cards.forEach(c => c.classList.remove("active"));
-                    card.classList.add("active");
-
-                    //Buscar contenido en HTML oculto
-                    const content = document.querySelector(`.services-detail__item[data-id="${target}"]`);
-
-
-                    if (content && detail) {
-                        detail.innerHTML = content.innerHTML;
-
-                        //Scroll suave
-                        detail.scrollIntoView({behavior: "smooth", block:"start"});
-                    }  
-                });
-            });
-
-            // ===== MODAL =====
-            const modal = document.getElementById("contact-modal");
-            const openMenu = document.getElementById("open-contact");
-            const openCTA = document.getElementById("open-contact-cta");
-            const closeBtn = document.querySelector(".close-modal");
-        
-            if (openMenu) openMenu.onclick = () =>  modal.style.display = "flex";
-            if (openCTA) openCTA.onclick = () => modal.style.display = "flex";
-            if (closeBtn) closeBtn.onclick = () => modal.style.display = "none";
-
-            window.onclick = (e) => {
-                if (modal && e.target === modal) {
-                    modal.style.display = "none";
-                }   
-            };
-
-            // ===== FORMULARIO =====
-            const form = document.getElementById("contact-form");
-
-            if(form) {
-                const status = document.getElementById("form-status");
-                const btn = form.querySelector(".send-btn");         
-
-                form.addEventListener("submit", function(e){
-                    e.preventDefault();
-
-                    // Anti doble click
-                    if(btn.disabled) return;
-            
-                    const data = new FormData(form);
-
-                    btn.disabled = true;
-                    btn.textContent = "Enviando...";
-                    status.style.display = "none";
-
-                    fetch("https://script.google.com/macros/s/AKfycbyOAdoPvfplsJUal97dnY2HGG9cJ1Zre2woadiDqPwQdu3ixqjv99SFiK-mv5cxPMKu/exec", {
-                        method: "POST",
-                        body: data
-                    })
-                    .then(res => {
-                        if(!res.ok) throw new Error("Error HTTP");
-                        return res.json();
-                    })
-                    .then(data => {
-
-                        status.style.display = "block";
-
-                        if(data.status ==="ok") {
-                            status.style.color = "green";
-                            status.textContent = data.message || "Mensaje enviado correctamente ✅";
-
-                            form.reset();
-                            if(modal) modal.style.display = "none"; // cierra modal
-                        } else {
-                            status.style.color = "red";
-                            status.textContent = data.message || "Error en el envío ❌";
-                        }
-                    })
-                    .catch(() => {
-                        status.style.display = "block";
-                        status.style.color = "red";
-                        status.textContent = "Error en la conexión ❌";
-                    })
-                        
-                    .finally(() => {
-                        btn.disabled = false;
-                        btn.textContent = "Enviar";
-                    });
-                })
-            }
-        });
-        </script>
     </body>
 </html> 

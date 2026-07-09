@@ -527,6 +527,31 @@ footer {
 }
 
 /* ==========================
+   INSTAGRAM FLOTANTE
+========================= */
+.instagram-float{
+    display: none;
+    position: fixed;
+    left: 18px;
+    bottom: 18px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4);
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    text-decoration: none;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .25);
+    z-index: 999;
+}
+
+.instagram-float:hover{
+    transform: scale(1.1);
+}
+
+/* ==========================
    📱 MOBILE
 ========================= */
 @media (max-width: 768px) {
@@ -595,5 +620,8 @@ footer {
         right: 18px;
         bottom: 18px;
         font-size: 1.8rem;
+    }
+    .instagram-float{
+        display: flex;
     }
 }

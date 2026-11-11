@@ -340,13 +340,68 @@ section{padding:92px 0}
     grid-template-columns:repeat(2,1fr);
     gap:10px;
 }
+.dimension-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 .dimension{
     padding:13px 14px;
-    border:1px solid var(--line);
+    border:1px solid var(--dimension-color);
+    border-left:4px solid var(--dimension-color);
     border-radius:12px;
     font-size:.88rem;
     font-weight:600;
-    background:#fff;
+    color: var(--navy);
+    background: var(--dimension-bg);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+.dimension:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 14px rgba(20,35,90,.10);
+}
+
+/* Colores correspondientes a los 10 segmentos del anillo */
+
+.dimension-1 {
+    --dimension-color: #24357f;
+    --dimension-bg: #e9ebf3;
+}
+.dimension-2 {
+    --dimension-color: #31499b;
+    --dimension-bg: #eaedf7;
+}
+.dimension-3 {
+    --dimension-color: #3d65a8;
+    --dimension-bg: #edf1f8;
+}
+.dimension-4 {
+    --dimension-color: #4d83b3;
+    --dimension-bg: #edf4f8;
+}
+.dimension-5 {
+    --dimension-color: #56b9d7;
+    --dimension-bg: #eaf7fb;
+}
+.dimension-6 {
+    --dimension-color: #21c66b;
+    --dimension-bg: #eaf7f2;
+}
+.dimension-7 {
+    --dimension-color: #21c66b;
+    --dimension-bg: #e8f8ef;
+}
+.dimension-8 {
+    --dimension-color: #62c57d;
+    --dimension-bg: #eff8f0;
+}
+.dimension-9 {
+    --dimension-color: #91cf7b;
+    --dimension-bg: #f2f8ed;
+}
+.dimension-10 {
+    --dimension-color: #c1dc8c;
+    --dimension-bg: #f6f9ed;
 }
 
 /* Method */

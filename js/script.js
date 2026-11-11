@@ -90,22 +90,28 @@ function initContactForm() {
             if (response.status === "ok") {
                 if (status) {
                     status.style.color = "green";
-                    status.textContent =
-                        response.message || "Mensaje enviado correctamente.";
+                    status.textContent = result.message || "Mensaje enviado correctamente.";
                 }
                 form.reset();
             } else {
                 if (status) {
                     status.style.color = "red";
-                    status.textContent =
-                        response.message || "Error en el envío.";
+                    status.textContent = result.message || "Error en el envío.";
                 }
             }
 
         })
 
         .catch(error => {
-
+            console.error("Error:", error);
+            if (status) {
+                status.style.display = "block";
+                status.style.color = "red";
+                status.textContent = "Error en la conexión de red";
+            }
+        })
+        .finally(() => {
+            // <-- CRUCIAL: Liberar el botón pase lo que pase (éxito o error)
             btn.disabled = false;
             btn.textContent = "Enviar consulta";
         });

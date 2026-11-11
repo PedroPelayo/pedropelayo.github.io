@@ -7,8 +7,8 @@
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="author" content="TIP Consulting">
 
-  <title>TIP Consulting | Diagnóstico Estratégico y Transformación Empresarial</title>
-  <meta name="description" content="Diagnóstico estratégico, profesionalización y transformación empresarial para PyMEs, industrias, agroindustrias y cooperativas. Turnaround, Investment & Profit. Ingeniería industrial, procesos, Lean, Industria 4.0, IA y gestión.">
+  <title>TIP Consulting | Diagnóstico Estratégico, Profesionalización y Transformación Empresarial</title>
+  <meta name="description" content="TIP Consulting profesionaliza empresas, industrias, agroindustrias y cooperativas. Diagnóstico estratégico, transformación organizacional, rentabilidad, ingeniería de procesos, Lean, Industria 4.0 e inteligencia artificial.Turnaround, Investment & Profit.">
   <link rel="canonical" href="https://www.tipconsulting.com.ar/">
 
   <!-- Open Graph -->
@@ -19,6 +19,7 @@
   <meta property="og:description" content="Comprender antes de transformar. Diagnóstico estratégico, profesionalización y transformación empresarial bajo el modelo Turnaround | Investment | Profit.">
   <meta property="og:url" content="https://www.tipconsulting.com.ar/">
   <meta property="og:image" content="https://www.tipconsulting.com.ar/og-image.jpg">
+  
 
   <!-- Fuente -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
@@ -57,10 +58,24 @@
         "description":"Firma especializada en Diagnóstico Estratégico, Profesionalización y Transformación Empresarial para empresas industriales, PyMEs, agroindustrias y cooperativas.",
         "slogan":"Comprender antes de transformar.",
         "telephone":"+54 9 3329 201439",
-        "areaServed":{
-          "@type":"Country",
-          "name":"Argentina"
-        },
+        "areaServed":[
+          {
+            "@type":"Country",
+            "name":"Argentina"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name":"Provincia de Santa Fe"
+          },
+          {
+            "@type": "AdministativeArea",
+            "name": "Provincia de Buenos Aires"
+          }
+          {
+            "@type": "AdministrativeArea",
+            "name": "Provincia de Cordoba"
+          }
+        ]
         "serviceType":[
           "Diagnóstico Estratégico",
           "Diagnóstico Organizacional",
@@ -86,6 +101,12 @@
           "Productividad Industrial",
           "Optimización de Costos",
           "Supply Chain",
+          "Rentabilidad Empresarial",
+          "Control de Gestión",
+          "Gestión de EBITDA",
+          "Turnaround Financiero",
+          "Evaluación de Rentabilidad de Unidades de Negocio",
+          "Planeamiento Financiero",
           "Gestión Financiera",
           "Evaluación de Inversiones",
           "Indicadores de Gestión",
@@ -212,7 +233,8 @@
       <img
         class="hero-bg"
         src="img/websup.png"
-        alt="La organización entendida como un sistema integrado de estrategía, gobierno, información, procesos y personas"
+        alt="La organización entendida como un sistema integrado de estrategia, gobierno, información, procesos y personas"
+        fetchpriority="high"
       >
 
       <div class="container hero-content">
@@ -343,16 +365,23 @@
           </div>
 
           <div class="dimension-grid">
-            <div class="dimension">Gobierno Corporativo</div>
-            <div class="dimension">Dirección General</div>
-            <div class="dimension">Planeamiento Estratégico</div>
-            <div class="dimension">Gestión Financiera</div>
-            <div class="dimension">Procesos</div>
-            <div class="dimension">Personas y liderazgo</div>
-            <div class="dimension">Tecnología</div>
-            <div class="dimension">Indicadores</div>
-            <div class="dimension">Gestión del riesgo</div>
-            <div class="dimension">Innovación</div>
+            <!-- COLUMNA AZUL -->
+            <div class="dimension-column">
+              <div class="dimension dimension-1">Gobierno Corporativo</div>
+              <div class="dimension dimension-2">Dirección General</div>
+              <div class="dimension dimension-3">Planeamiento Estratégico</div>
+              <div class="dimension dimension-4">Gestión Financiera</div>
+              <div class="dimension dimension-5">Procesos</div>
+            </div>
+
+            <!-- COLUMNA VERDE -->
+            <div class="dimension-column">
+              <div class="dimension dimension-6">Personas y liderazgo</div>
+              <div class="dimension dimension-7">Tecnología</div>
+              <div class="dimension dimension-8">Indicadores</div>
+              <div class="dimension dimension-9">Gestión del riesgo</div>
+              <div class="dimension dimension-10">Innovación</div>
+            </div>
           </div>
         </div>
       </div>
@@ -687,7 +716,8 @@
             </label>
 
             <button class="btn btn-primary" type="submit">Enviar consulta</button>
-            <p class="form-note">Se utilizará su información solo a los fines de responder a su consulta.</p>
+            <p class="form-note">Su consulta será enviada al equipo de TIP Consulting. 
+              Utilizaremos la información únicamente para responder a su solicitud.</p>
           </form>
         </div>
       </div>
